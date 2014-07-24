@@ -1,0 +1,77 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `ecom_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `ecom_db` ;
+
+-- -----------------------------------------------------
+-- Table `ecom_db`.`tbl_customers`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ecom_db`.`tbl_customers` ;
+
+CREATE TABLE IF NOT EXISTS `ecom_db`.`tbl_customers` (
+  `custumer_ID` INT NOT NULL AUTO_INCREMENT,
+  `f_name` VARCHAR(50) NULL,
+  `l_name` VARCHAR(50) NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `username` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(64) NOT NULL,
+  `billing_a` VARCHAR(200) NULL,
+  `mailing_a` VARCHAR(200) NULL,
+  `cc_number` VARCHAR(100) NULL,
+  `cc_code` VARCHAR(45) NULL,
+  `cc_exp` DATE NULL,
+  PRIMARY KEY (`custumer_ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ecom_db`.`tbl_inventory`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ecom_db`.`tbl_inventory` ;
+
+CREATE TABLE IF NOT EXISTS `ecom_db`.`tbl_inventory` (
+  `product_ID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `price` VARCHAR(50) NOT NULL,
+  `quantity` INT NOT NULL DEFAULT 1,
+  PRIMARY KEY (`product_ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ecom_db`.`tbl_orders`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ecom_db`.`tbl_orders` ;
+
+CREATE TABLE IF NOT EXISTS `ecom_db`.`tbl_orders` (
+  `order_ID` INT NOT NULL AUTO_INCREMENT,
+  `customer_ID` INT NOT NULL,
+  `product_ID` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `price` VARCHAR(50) NOT NULL,
+  `shipped` TINYINT(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`order_ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ecom_db`.`tbl_cart`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ecom_db`.`tbl_cart` ;
+
+CREATE TABLE IF NOT EXISTS `ecom_db`.`tbl_cart` (
+  `cart_ID` INT NOT NULL AUTO_INCREMENT,
+  `customer_ID` INT NOT NULL,
+  `product_ID` INT NOT NULL,
+  `quantity` INT NOT NULL DEFAULT 1,
+  `date_added` DATETIME NOT NULL,
+  `expired` TINYINT(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`cart_ID`))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
