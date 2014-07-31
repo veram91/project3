@@ -1,0 +1,186 @@
+body{
+	
+	//background-color:#032336;
+	background-color:#E5E4E2;
+	color:white;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+
+
+
+
+}
+
+.enclosing{
+	height:100%;
+	
+}
+
+.display_menu{
+	position:absolute;
+	left:10px;
+	border-right-style: solid;
+    width:150px;
+    height:450px;
+    padding:10px;
+    border-right-color:#566D7E;
+    border-right-style: groove;
+    border-right-width: 5px;
+    background-color:#6F8FA2;
+    color:#032336;
+   font-family: "Andale Mono", AndaleMono, monospace;
+   font-size:12pt;
+
+}
+
+.floaty{
+	float:right;
+
+}
+
+fieldset{
+	width:300px;
+}
+
+input + input {
+    clear:both;
+}
+
+
+
+
+
+.content{
+	position:relative;
+	left:178px;
+	margin-right:148px;
+	width: 100%;
+	
+	padding-left: 15px;
+	padding-right:15px;
+	padding-top:15px;
+	background-color:#E5E4E2;
+	color:black;
+	
+
+
+}
+
+.display_product{
+	float:left;
+	margin-right: 30px;
+	margin-bottom:40px;
+}
+
+.content_full{
+	height:500px;
+}
+
+#register{
+	width:700px;
+}
+
+
+.display_errors{
+	color:red;
+}
+
+#welcome{
+	font-weight: bold;
+	font-size:12pt;
+	color:white;
+}
+
+#welcome_name{
+	
+	font-style: italic;
+}
+
+.header{
+	//background-color: #2B3856;
+	width:100%;
+	color:white;
+	text-align:center;
+	font-family: "Andale Mono", AndaleMono, monospace;
+	text-decoration: underline;
+	//font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+	//font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+	font-size: 34pt;
+	height:80px;
+	padding-top: 30px;
+	background-color:black;
+
+}
+
+
+
+a:link {
+    color: #113951;
+}
+
+
+a:visited {
+    color: #032336;
+
+}
+
+
+a:hover {
+    font-size:14pt;
+}
+
+
+a:active {
+    color: white;
+}
+
+.profile_info{
+	height:500px;
+
+}
+
+.style_info{
+	text-decoration: underline;
+}
+
+.highlight{
+	font-weight: bold;
+	color:#2F4172;
+}
+
+/*
+
+form{
+	width:50%;
+}
+
+label {
+    width: 20%;
+    
+    text-align: right;
+}
+
+label, input {
+   
+    display: inline-block;
+}
+
+label {
+    width: 30%;
+    
+    text-align: right;
+}
+
+label + input {
+    width: 30%;
+   
+    margin: 0 30% 0 4%;
+}
+
+
+
+
+*/
+
+
+
+
